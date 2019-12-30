@@ -1,14 +1,22 @@
-body {
+ body {
     padding: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-}
+ }
 
 canvas {
     width: 800px;
     height: 800px;
     border-left: solid;
-    border-bottom: solid
+    border-bottom: solid;
+}
+
+.bb-flex-container {
+   flex-direction: column;
+}
+
+h1 {
+   padding: 10px;
+   text-align: center;
 }

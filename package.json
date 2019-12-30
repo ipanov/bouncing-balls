@@ -1,5 +1,5 @@
 {
-  "name": "canvas-template",
+  "name": "bouncing-balls",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ilija Panov",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {

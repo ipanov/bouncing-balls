@@ -5,10 +5,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   mode: 'development',
-  entry: './src/js/canvas.js',
+  entry: './src/js/index.js',
   output: {
     path: __dirname + '/dist/',
-    filename: './js/canvas.bundle.js'
+    filename: './js/index.bundle.js'
   },
   module: {
     rules: [{
