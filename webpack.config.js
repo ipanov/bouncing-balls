@@ -1,10 +1,15 @@
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+var path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const isDevelopment = process.env.NODE_ENV === 'development'
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   mode: 'development',
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 3000
+  },
   entry: './src/js/index.js',
   output: {
     path: __dirname + '/dist/',
@@ -60,19 +65,15 @@ module.exports = {
     extensions: ['.js', '.jsx', '.scss']
   },
   plugins: [
-    new BrowserSyncPlugin({
-      host: 'localhost',
-      port: 3000,
-      server: {
-        baseDir: ['dist']
-      },
-      files: ['./dist/*'],
-      notify: false
-    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       favicon: 'favicon.ico',
       template: 'src/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'about.html',
+      favicon: 'favicon.ico',
+      template: 'src/about.html'
     }),
     new MiniCssExtractPlugin({
       filename: isDevelopment ? '[name].css' : '[name].[hash].css',

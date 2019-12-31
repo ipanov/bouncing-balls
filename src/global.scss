@@ -5,18 +5,31 @@
     justify-content: center;
  }
 
-canvas {
+ canvas {
     width: 800px;
     height: 800px;
     border-left: solid;
     border-bottom: solid;
-}
+ }
 
-.bb-flex-container {
-   flex-direction: column;
-}
+ .bb-flex-container {
+    flex-direction: column;
+ }
 
-h1 {
-   padding: 10px;
-   text-align: center;
-}
+ h1 {
+    padding: 10px;
+    text-align: center;
+ }
+
+ header {
+    text-align: center;
+ }
+
+ nav {
+    float: right;
+ }
+
+ .about-row {
+    float: left;
+    text-align: center;
+ }

@@ -27,6 +27,8 @@ const colors = [
 const sceneConfig = {
   width: canvas.width,
   height: canvas.height,
+  gravity: 1, // default gravity of 1
+  friction: 0.95 // balls dissipate 5% of their energy on contact with floor due to friction
 }
 
 // Event Listeners
@@ -44,7 +46,8 @@ function createBall(x, y) {
 	var vX = getRandomIntFromRange(-10, 10);
   var vY = getRandomIntFromRange(-10, 10);
   var color = getRandomColor(colors);
-  balls.push(new Ball(x, y, vX, vY, radius, color, sceneConfig));
+  const bounce = 0.75; // ball losses 25% energy on each bounce from wall or floor
+  balls.push(new Ball(x, y, vX, vY, radius, color, bounce, sceneConfig));
 }
 
 // Animation Loop
