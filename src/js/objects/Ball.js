@@ -16,8 +16,8 @@ export class Ball {
             this.y = this.sceneConfig.height - this.radius
             this.vY = -(this.vY * this.bounce);
             this.vX = this.vX * this.sceneConfig.friction
-		} 
-
+        } 
+ 
         // bounce from left bound
 		if (this.x - this.radius <= 0) {
             this.vX = -(this.vX * this.bounce);
@@ -28,11 +28,12 @@ export class Ball {
         if (this.vX < 0.01 && this.vX > -0.01) {
             this.vX = 0
           }
-          if (this.vY < 0.01 && this.vY > -0.01) {
+        if (this.vY < 0.01 && this.vY > -0.01) {
             this.vY = 0
-          }
+        }
 
         // update ball position
+        this.vY +=  this.sceneConfig.gravity
         this.x += this.vX;
         this.y += this.vY;
     };

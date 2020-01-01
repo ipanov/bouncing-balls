@@ -28,10 +28,15 @@ const sceneConfig = {
   width: canvas.width,
   height: canvas.height,
   gravity: 1, // default gravity of 1
-  friction: 0.95 // balls dissipate 5% of their energy on contact with floor due to friction
+  friction: 0.85 // balls dissipate 15% of their energy on contact with floor due to friction
 }
 
 // Event Listeners
+canvas.addEventListener('mousemove', (event) => {
+  mouse.x = event.clientX;
+  mouse.y = event.clientY;
+})
+
 canvas.addEventListener("click", function(event) {
     mouse = getMousePos(canvas, event)
     createBall(mouse.x, mouse.y);

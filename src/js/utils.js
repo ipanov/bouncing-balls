@@ -15,10 +15,16 @@ export function getDistance(x1, y1, x2, y2) {
 
 export function getMousePos(element, evt) {
   var rect = element.getBoundingClientRect();
-  return {
-      x: evt.clientX - rect.left,
-      y: evt.clientY - rect.top
-  };
+  var actualX = evt.pageX - rect.left;
+  var actualY = evt.pageY - rect.top;
+  
+  var currentWidth = element.scrollWidth;
+  var currentHeight = element.scrollHeight;
+
+  var x = element.width * actualX / currentWidth;
+  var y = element.height * actualY / currentHeight;
+
+  return {x, y}
 }
 
 export default { getMousePos, getRandomIntFromRange, getRandomColor, getDistance }
