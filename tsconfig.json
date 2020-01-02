@@ -1,12 +1,21 @@
 {
     "compilerOptions": {
-      "outDir": "./dist/",
       "module": "CommonJS",
+      "moduleResolution": "node",
+      "allowJs": true,
+      "outDir": "./dist/",
+      "lib": ["es6", "DOM"],
       "target": "es5",
-      "allowJs": true
+      "sourceMap": true,
+      "types": ["reflect-metadata"],
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "resolveJsonModule": true
     },
     "include": [
         "./src/**/*"
     ],
-    "exclude": ["./dist"]
+    "exclude": [
+        "node_modules"
+    ]
   }

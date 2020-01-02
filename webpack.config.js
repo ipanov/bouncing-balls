@@ -19,20 +19,12 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.scss$/, use: [ "style-loader", "css-loader", "sass-loader" ] },
+      { test: /\.scss$/, 
+        use: [ "style-loader", "css-loader", "sass-loader" ] 
+      },
       { test: /\.tsx?$/, 
         use: 'ts-loader', 
         exclude: /node_modules/,
-      },
-      {
-        test:  /\.tsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        }
       },
       {
         test: /\.module\.s(a|c)ss$/,
@@ -86,5 +78,5 @@ module.exports = {
     })
   ],
   watch: true,
-  devtool: 'source-map'
+  devtool: 'source-map' // use 'eval' for production
 }

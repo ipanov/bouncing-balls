@@ -4,24 +4,24 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "webpack --config webpack.config.js",
-    "watch": "webpack --watch",
     "start": "webpack-dev-server --open",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "tsc": "tsc",
+    "test": "jest"
   },
   "keywords": [],
   "author": "Ilija Panov",
   "license": "ISC",
   "dependencies": {
+    "inversify": "^5.0.1",
+    "reflect-metadata": "^0.1.13",
     "source-map-loader": "^0.2.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
+    "@types/jest": "^24.0.25",
     "@types/lodash": "^4.14.149",
-    "babel-loader": "^8.0.6",
-    "browser-sync": "^2.26.7",
-    "browser-sync-webpack-plugin": "^2.2.2",
+    "@types/node": "^13.1.2",
     "css-loader": "^3.4.0",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.9.0",
@@ -30,6 +30,7 @@
     "prettier": "^1.17.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.1.2",
+    "ts-jest": "^24.2.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.4",
     "typings-for-css-modules-loader": "^1.7.0",
