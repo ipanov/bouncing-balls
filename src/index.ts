@@ -1,6 +1,6 @@
 import { getMousePos, getRandomIntFromRange, getRandomColor } from './utils'
-import styles from '../global'
 import { Ball } from './objects/Ball';
+import "./Global.scss";
 
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
@@ -33,15 +33,13 @@ const sceneConfig = {
 
 // Event Listeners
 canvas.addEventListener('mousemove', (event) => {
-  mouse.x = event.clientX;
-  mouse.y = event.clientY;
+  mouse = getMousePos(canvas, event)
 })
 
 canvas.addEventListener("click", function(event) {
     mouse = getMousePos(canvas, event)
     createBall(mouse.x, mouse.y);
 });
-
 
 // Implementation
 var balls = [];

@@ -12,10 +12,13 @@
   "keywords": [],
   "author": "Ilija Panov",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "source-map-loader": "^0.2.4"
+  },
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
+    "@types/lodash": "^4.14.149",
     "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.2.2",
@@ -27,8 +30,12 @@
     "prettier": "^1.17.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.1.2",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.4",
+    "typings-for-css-modules-loader": "^1.7.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1"
+    "webpack-dev-server": "^3.10.1",
+    "webpack-merge": "^4.2.2"
   }
 }

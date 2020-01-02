@@ -1,4 +1,20 @@
+interface  SceneConfig {
+    width: number;
+    height: number;
+    friction: number;
+    gravity: number;
+}
+
 export class Ball {
+    x: number;
+    y: number;
+    vX: number;
+    vY: number;
+    color: string;
+    radius: number;
+    bounce: number;
+    sceneConfig: SceneConfig;
+
     constructor(x, y, vX, vY, radius, color, bounce, sceneConfig) {
         this.x = x;
         this.y = y;
@@ -47,5 +63,3 @@ export class Ball {
             ctx.closePath();
     };
 }
-
-export default Ball;

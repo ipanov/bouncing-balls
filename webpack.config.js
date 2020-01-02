@@ -10,14 +10,22 @@ module.exports = {
     compress: true,
     port: 3000
   },
-  entry: './src/js/index.js',
+  entry: './src/index.ts',
   output: {
-    path: __dirname + '/dist/',
-    filename: './js/index.bundle.js'
+    filename: "./dist/bundle.js",
+  },
+  resolve: {
+    extensions: ['.ts', '.js', '.json', '.scss']
   },
   module: {
-    rules: [{
-        test: /\.m?js$/,
+    rules: [
+      { test: /\.scss$/, use: [ "style-loader", "css-loader", "sass-loader" ] },
+      { test: /\.tsx?$/, 
+        use: 'ts-loader', 
+        exclude: /node_modules/,
+      },
+      {
+        test:  /\.tsx?$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
@@ -60,9 +68,6 @@ module.exports = {
         ]
       }
     ]
-  },
-  resolve: {
-    extensions: ['.js', '.jsx', '.scss']
   },
   plugins: [
     new HtmlWebpackPlugin({
