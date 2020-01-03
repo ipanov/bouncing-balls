@@ -29,7 +29,22 @@ nav {
    float: right;
 }
 
-.about-row {
-   float: left;
-   text-align: center;
-}
+.flex-grid {
+   display: flex;
+ }
+
+ .flex-row {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   width: 100%;
+ }
+
+ .flex-column {
+   display: flex;
+   flex-direction: column;
+   flex-basis: 100%;
+   flex: 1;
+ }
+
+ 

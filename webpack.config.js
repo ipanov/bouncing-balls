@@ -10,21 +10,25 @@ module.exports = {
     compress: true,
     port: 3000
   },
-  entry: './src/index.ts',
+  entry: {
+    index: './src/index.ts',
+    about: './src/about.ts',
+  },
   output: {
-    filename: "./dist/bundle.js",
+    filename: "./dist/[name].bundle.js",
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
   },
   resolve: {
     extensions: ['.ts', '.js', '.json', '.scss']
   },
   module: {
-    rules: [
-
-      { test: /\.scss$/, 
-        use: [ "style-loader", "css-loader", "sass-loader" ] 
-      },      
-      { test: /\.tsx?$/, 
-        use: 'ts-loader', 
+    rules: [{
+        test: /\.tsx?$/,
+        use: 'ts-loader',
         exclude: /node_modules/,
       },
       {
@@ -71,6 +75,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'about.html',
       favicon: 'favicon.ico',
+      css: ['index'],
+      chunks: ['about'],
       template: 'src/about.html'
     }),
     new MiniCssExtractPlugin({
