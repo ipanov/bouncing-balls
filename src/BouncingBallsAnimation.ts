@@ -3,13 +3,12 @@ import { TYPES } from "./types";
 import { Scene } from "./objects/Scene";
 
 interface IBouncingBallsAnimation {
-    scene: Scene;
     animate(): void;
 }
 
 @injectable()
 class BouncingBallsAnimation implements IBouncingBallsAnimation {
-    scene: Scene;
+    private scene: Scene;
 
     constructor(@inject(TYPES.Scene) scene: Scene) {
         this.scene = scene;

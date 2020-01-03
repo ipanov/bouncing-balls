@@ -1,6 +1,6 @@
 import { SceneConfig } from './SceneConfig';
 
-export class Ball {
+interface IBall {
     x: number;
     y: number;
     vX: number;
@@ -8,7 +8,18 @@ export class Ball {
     color: string;
     radius: number;
     bounce: number;
+    update(): void;
+    draw(): void;
+}
 
+export class Ball implements IBall {
+    public x: number;
+    public y: number;
+    public vX: number;
+    public vY: number;
+    public color: string;
+    public radius: number;
+    public bounce: number;
     private canvas: HTMLCanvasElement;
     private ctx: CanvasRenderingContext2D;
     private sceneConfig: SceneConfig;
@@ -53,7 +64,6 @@ export class Ball {
         this.x += this.vX;
         this.y += this.vY;
     };
-
 
     draw() {
         this.ctx.beginPath();

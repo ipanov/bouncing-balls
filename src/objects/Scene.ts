@@ -20,7 +20,7 @@ class Scene implements IScene {
     public balls: Ball[];
     private ctx: CanvasRenderingContext2D;
     private canvas: HTMLCanvasElement;
-    private mousePos: { x: number, y: number };
+    private mousePosition: { x: number, y: number };
     private sceneConfig: SceneConfig;
 
     constructor(@inject(TYPES.SceneConfig) sceneConfig: SceneConfig) {
@@ -29,14 +29,14 @@ class Scene implements IScene {
 
     init() {
         this.balls = [];
-        this.mousePos = { x: 0, y: 0 };
+        this.mousePosition = { x: 0, y: 0 };
         this.canvas = document.querySelector('canvas');
         this.ctx = this.canvas.getContext('2d');
         this.canvas.width = innerWidth;
         this.canvas.height = innerHeight;
         this.canvas.addEventListener("click", (event) => {
-            this.mousePos = Utils.getMousePos(this.canvas, event)
-            this.createBall(this.mousePos.x, this.mousePos.y, this.canvas, this.ctx, this.sceneConfig);
+            this.mousePosition = Utils.getMousePosition(this.canvas, event)
+            this.createBall(this.mousePosition.x, this.mousePosition.y, this.canvas, this.ctx, this.sceneConfig);
         });
     };
 

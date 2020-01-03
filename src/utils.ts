@@ -7,7 +7,7 @@ class Utils {
     return colors[Math.floor(Math.random() * colors.length)];
   }
 
-  static getMousePos(element : HTMLCanvasElement, evt : MouseEvent) : any {
+  static getMousePosition(element : HTMLCanvasElement, evt : MouseEvent) : any {
     var rect = element.getBoundingClientRect();
     var actualX = evt.pageX - rect.left;
     var actualY = evt.pageY - rect.top;
