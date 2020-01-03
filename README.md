@@ -12,10 +12,6 @@ Let's assume the balls are moving on different planes along an imaginary z-axis 
 
 2. Install dependencies:
 
-        yarn
-
-    or
-
         npm install
 
 3. Run webpack:
