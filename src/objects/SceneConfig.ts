@@ -1,25 +1,20 @@
-import { Canvas, ICanvas } from "../Canvas";
-import { injectable, inject } from "inversify";
-import { TYPES } from "../types";
+import { injectable } from "inversify";
 
 interface ISceneConfig{
-    width: number;
-    height: number;
     gravity: number;
     friction: number;
 }
 
 @injectable()
 class SceneConfig implements ISceneConfig {
-    canvas: ICanvas;
+    gravity: number;
+    friction: number;
 
-    constructor(@inject(TYPES.Canvas) canvas: ICanvas) {
-        this.canvas = canvas;
-    };
-    width = this.canvas.width;
-    height =  this.canvas.height;
-    gravity =  1;
-    friction = 0.85;
+    // TODO: read from app.config
+    public constructor () {
+        this.gravity =  1;
+        this.friction = 0.85;
+    }
 }
 
 export { ISceneConfig, SceneConfig }

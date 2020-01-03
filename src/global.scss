@@ -1,36 +1,35 @@
- body {
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
+body {
+   padding: 30px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
 
- canvas {
-    width: 80%;
-    height: 80%;
-    border-left: solid;
-    border-bottom: solid;
-    text-align: center;
- }
+canvas {
+   width: 80%;
+   height: 80%;
+   border-left: solid;
+   border-bottom: solid;
+}
 
- .bb-flex-container {
-    flex-direction: column;
- }
+.bb-flex-container {
+   flex-direction: column;
+}
 
- h1 {
-    padding: 10px;
-    text-align: center;
- }
+h1 {
+   padding: 10px;
+   text-align: center;
+}
 
- header {
-    text-align: center;
- }
+header {
+   text-align: center;
+}
 
- nav {
-    float: right;
- }
+nav {
+   float: right;
+}
 
- .about-row {
-    float: left;
-    text-align: center;
- }
+.about-row {
+   float: left;
+   text-align: center;
+}
